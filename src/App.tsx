@@ -5,6 +5,6 @@ function App() {
   return <Wrapper>Nitad18 NFT Website</Wrapper>;
 }
 const Wrapper = styled.div`
-  background: red;
+  background: var(--color-turqoise);
 `;
 export default App;
