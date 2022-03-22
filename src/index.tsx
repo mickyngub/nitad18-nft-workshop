@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import { App } from "src/app";
+import { nitad18Background } from "src/assets";
 import GlobalStyles from "./ui/GlobalStyles";
 
 ReactDOM.render(
