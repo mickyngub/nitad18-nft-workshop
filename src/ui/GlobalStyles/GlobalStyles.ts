@@ -3,11 +3,17 @@
 import { COLORS } from "../../constants";
 import { createGlobalStyle } from "styled-components/macro";
 import FCMinimal from "src/fonts/FC-Minimal-Regular.ttf";
+import AloneInSpace from "src/fonts/alone-in-space.ttf";
 const globalStyles = createGlobalStyle`
 
 @font-face {
   font-family: "FC Minimal";
   src: url(${FCMinimal}) format('truetype');
+}
+
+@font-face {
+  font-family: "Alone in Space";
+  src: url(${AloneInSpace}) format('truetype');
 }
 /*
   1. Use a more-intuitive box-sizing model.
