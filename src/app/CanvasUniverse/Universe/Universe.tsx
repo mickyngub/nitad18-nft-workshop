@@ -14,7 +14,8 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 export default function Model({ ...props }) {
   const group = useRef();
-  const { nodes, materials, animations, scene } = useGLTF("/scene.gltf");
+  const { nodes, materials, animations, scene, universe } =
+    useGLTF("/universe.gltf");
   // const { actions, mixer } = useAnimations(animations, group);
   let mixer: any;
   if (animations.length) {
