@@ -2,8 +2,13 @@
 
 import { COLORS } from "../../constants";
 import { createGlobalStyle } from "styled-components/macro";
-
+import FCMinimal from "src/fonts/FC-Minimal-Regular.ttf";
 const globalStyles = createGlobalStyle`
+
+@font-face {
+  font-family: "FC Minimal";
+  src: url(${FCMinimal}) format('truetype');
+}
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -21,7 +26,7 @@ const globalStyles = createGlobalStyle`
 */
 html, body, #root {
   height: 100%;
-  font-family: 'Manrope', sans-serif;
+  font-family: "FC Minimal";
 }
 /*
   Typographic tweaks!
@@ -72,6 +77,10 @@ html {
     --color-gray: ${COLORS.gray};
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
 `;
 
 export default globalStyles;
