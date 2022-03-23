@@ -12,7 +12,7 @@ const CanvasStellar = () => {
         <Stars radius={75} count={2500} fade />
         <OrbitControls
           autoRotate
-          autoRotateSpeed={0.5}
+          autoRotateSpeed={0.25}
           minDistance={2}
           maxDistance={6}
         />

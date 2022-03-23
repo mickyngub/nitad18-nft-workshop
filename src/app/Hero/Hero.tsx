@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import Nav from "src/ui/Nav";
 import CanvasStellar from "src/app/CanvasStellar";
-import { TitleH1, TitleH2, TitleH4 } from "src/ui/Typography";
+import { TitleH1, TitleH2, TitleH3, TitleH4 } from "src/ui/Typography";
 import Button from "src/ui/Button";
 
 const Hero = () => {
@@ -14,11 +14,19 @@ const Hero = () => {
         {/* <CanvasUniverse /> */}
       </WrapperCanvas>
       <WrapperContent>
-        <TitleH1 fontFamily="AloneInSpace" fontSize="4rem">
+        <TitleH1 fontFamily="AloneInSpace" fontSize="3rem">
+          NITAD
+          <span>18</span>
           NFT Workshop
         </TitleH1>
-        <TitleH2 fontFamily="AloneInSpace">Pichaya Puttekulangkura</TitleH2>
-        <TitleH2 fontFamily="AloneInSpace">Dhibadhi Sriuranpong</TitleH2>
+        <div>
+          <TitleH4 fontFamily="AloneInSpace">
+            Pichaya Puttekulangkura (Micky)
+          </TitleH4>
+          <TitleH4 fontFamily="AloneInSpace">
+            Dhibadhi Sriuranpong (Atom)
+          </TitleH4>
+        </div>
         <Button />
       </WrapperContent>
     </WrapperHero>
@@ -37,7 +45,14 @@ const WrapperCanvas = styled.div`
   width: 100%;
 `;
 const WrapperContent = styled.div`
+  /* height: 100%; */
   position: relative;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 6rem;
+  padding: 6rem 4rem;
 `;
 export default Hero;
