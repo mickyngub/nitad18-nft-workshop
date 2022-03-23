@@ -36,7 +36,6 @@ const WrapperHero = styled.div`
   height: 100vh;
   position: relative;
   top: 0;
-  margin-bottom: 25rem;
 `;
 const WrapperCanvas = styled.div`
   position: absolute;
