@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { ethers } from "ethers";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Button from "src/ui/Button";
 import styled from "styled-components";
 import CanvasUniverse from "../CanvasUniverse";
@@ -13,7 +15,12 @@ const Mint = () => {
     const signer = provider.getSigner();
     let signerAddress = await signer.getAddress();
     setAddress(signerAddress);
+    notifyWalletConnected();
   };
+  const notifyWalletConnected = () => {
+    toast("Wallet Connected");
+  };
+
   return (
     <WrapperMint id="mint">
       <WrapperContent>
@@ -56,6 +63,7 @@ const Mint = () => {
           <Button>Mint</Button>
         )}
       </WrapperMinting>
+      <ToastContainer />
     </WrapperMint>
   );
 };

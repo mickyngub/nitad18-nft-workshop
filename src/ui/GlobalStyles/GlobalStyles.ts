@@ -88,6 +88,13 @@ a {
   text-decoration: none;
   color: var(--color-white);
 }
+
+:root {
+  --toastify-font-family: "AloneInSpace";
+  --toastify-toast-width: 375px;
+
+
+}
 `;
 
 export default globalStyles;
