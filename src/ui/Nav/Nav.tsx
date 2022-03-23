@@ -64,17 +64,12 @@ const WrapperNav = styled.nav`
   display: grid;
   grid-template-columns: 1fr 9fr;
   align-items: center;
+  padding: 0 2rem;
 `;
-const WrapperLogo = styled.div`
-  /* justify-self: start; */
-  /* justify-self: center; */
-  padding: 0 1rem;
-`;
+const WrapperLogo = styled.div``;
 const WrapperLinks = styled.div`
   display: flex;
   justify-content: space-between;
-  /* gap: 0.25rem; */
-  padding: 0 1rem;
 `;
 const Image = styled.img`
   display: block;

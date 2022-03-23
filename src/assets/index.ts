@@ -1,2 +1,10 @@
 export { default as nitad18Background } from "./nitad18-background.png";
 export { default as nitad18Logo } from "./nitad18-logo.png";
+export { default as nitad18LogoBig } from "./nitad18-logo-big.png";
+export { default as mfecLogo } from "./mfec-logo.png";
+export { default as graceLogo } from "./grace-logo.png";
+export { default as twitterLogo } from "./twitter-logo.png";
+export { default as instagramLogo } from "./instagram-logo.png";
+export { default as facebookLogo } from "./facebook-logo.png";
+export { default as footerOverlayInner } from "./footer-overlay-inner.png";
+export { default as footerOverlayOuter } from "./footer-overlay-outer.png";
