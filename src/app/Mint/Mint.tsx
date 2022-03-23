@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "src/ui/Button";
 import styled from "styled-components";
 import CanvasUniverse from "../CanvasUniverse";
 const Mint = () => {
@@ -7,6 +8,7 @@ const Mint = () => {
       <WrapperCanvas>
         <CanvasUniverse />
       </WrapperCanvas>
+      <Button glow={false}>Mint</Button>
     </WrapperMint>
   );
 };

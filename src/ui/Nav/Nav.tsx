@@ -1,6 +1,7 @@
 import React from "react";
 import { nitad18Logo } from "src/assets";
 import styled from "styled-components/macro";
+import { Anchor } from "../Anchor";
 import { TitleH4 } from "../Typography";
 
 const navLinks = [
@@ -44,9 +45,9 @@ const Nav = () => {
       <WrapperLinks>
         {navLinks.map((navLink) => {
           return (
-            <a href={navLink.link} target="_blank">
+            <Anchor href={navLink.link}>
               <TitleH4>{navLink.name}</TitleH4>
-            </a>
+            </Anchor>
           );
         })}
       </WrapperLinks>

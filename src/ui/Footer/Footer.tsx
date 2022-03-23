@@ -10,6 +10,7 @@ import {
   footerOverlayOuter,
   footerOverlayInner,
 } from "src/assets";
+import { Anchor } from "../Anchor";
 const Footer = () => {
   return (
     <WrapperFooter>
@@ -31,16 +32,20 @@ const Footer = () => {
           </div>
           <WrapperSocial>
             <SocialDiv>
-              <img src={instagramLogo} alt="" />
-              <h4>nitad18th</h4>
+              <img src={instagramLogo} alt="Nitad18 Instagram" />
+              <Anchor href="https://www.instagram.com/nitad18th/">
+                nitad18th
+              </Anchor>
             </SocialDiv>
             <SocialDiv>
-              <img src={facebookLogo} alt="" />
-              <h4>NITAD 18</h4>
+              <img src={facebookLogo} alt="Nitad18 Facebook" />
+              <Anchor href="https://www.facebook.com/NITAD18TH">
+                NITAD 18
+              </Anchor>
             </SocialDiv>
             <SocialDiv>
-              <img src={twitterLogo} alt="" />
-              <h4>NITAD 18</h4>
+              <img src={twitterLogo} alt="Nitad18 Twitter" />
+              <Anchor href="https://twitter.com/nitad18th">NITAD 18</Anchor>
             </SocialDiv>
           </WrapperSocial>
         </WrapperContacts>
@@ -104,6 +109,11 @@ const Image = styled.img<{ src: string | undefined; alt?: string }>`
 const SocialDiv = styled.div`
   display: flex;
   gap: 1.5rem;
+  transition: opacity 0.5s ease;
+  /* cursor: pointer; */
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 const SponsorDiv = styled.div`
   display: flex;
