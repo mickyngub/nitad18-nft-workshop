@@ -38,7 +38,7 @@ const navLinks = [
 
 const Nav = () => {
   return (
-    <WrapperNav>
+    <WrapperNav id="nav">
       <WrapperLogo>
         <Image src={nitad18Logo} alt="Nitad18 Logo" />
       </WrapperLogo>

@@ -33,6 +33,7 @@ const globalStyles = createGlobalStyle`
 html, body, #root {
   height: 100%;
   font-family: "FCMinimal";
+  scroll-behavior: smooth;
 }
 /*
   Typographic tweaks!

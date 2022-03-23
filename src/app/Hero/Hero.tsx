@@ -4,6 +4,7 @@ import Nav from "src/ui/Nav";
 import CanvasStellar from "src/app/CanvasStellar";
 import { TitleH1, TitleH2, TitleH3, TitleH4 } from "src/ui/Typography";
 import Button from "src/ui/Button";
+import { Anchor } from "src/ui/Anchor";
 
 const Hero = () => {
   return (
@@ -27,7 +28,9 @@ const Hero = () => {
             Dhibadhi Sriuranpong (Atom)
           </TitleH4>
         </div>
-        <Button>Start</Button>
+        <a href="#mint">
+          <Button>Start</Button>
+        </a>
       </WrapperContent>
     </WrapperHero>
   );

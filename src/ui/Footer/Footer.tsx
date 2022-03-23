@@ -50,9 +50,9 @@ const Footer = () => {
           </WrapperSocial>
         </WrapperContacts>
         <WrapperLogo>
-          <div>
+          <a href="#nav">
             <img src={nitad18LogoBig} alt="NITAD18 Logo" />
-          </div>
+          </a>
         </WrapperLogo>
       </WrapperContent>
       <WrapperOverlay>
