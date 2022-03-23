@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Button from "src/ui/Button";
 import styled from "styled-components";
 import CanvasUniverse from "../CanvasUniverse";
-import { TitleH1, TitleH2, TitleH4 } from "src/ui/Typography";
+import { TitleH1, TitleH2, TitleH3, TitleH4, TitleH5 } from "src/ui/Typography";
 import { polygonLogo } from "src/assets";
 const Mint = () => {
   const [address, setAddress] = useState<string>("");
@@ -40,18 +40,24 @@ const Mint = () => {
           <TitleH1 fontFamily="AloneInSpace">Polygon Network</TitleH1>
         </div>
 
-        <TitleH2 fontFamily="AloneInSpace">NFT Contract Address</TitleH2>
-        <TitleH4 fontFamily="AloneInSpace">
+        <TitleH3 fontFamily="AloneInSpace">NFT Contract Address</TitleH3>
+        <TitleH5 fontFamily="AloneInSpace">
           0x45772883a4e669b6f9ee3fdbe29f282a1db8fb80
-        </TitleH4>
-        <TitleH2 fontFamily="AloneInSpace">Your Metamask Address</TitleH2>
-        <TitleH4 fontFamily="AloneInSpace">
+        </TitleH5>
+        <TitleH3 fontFamily="AloneInSpace">Your Metamask Address</TitleH3>
+        <TitleH5 fontFamily="AloneInSpace">
           {address ? address : "Please Connect with your Metamask Wallet"}{" "}
-        </TitleH4>
-        <TitleH2 fontFamily="AloneInSpace">Mint Amount</TitleH2>
-        <TitleH4 fontFamily="AloneInSpace">1</TitleH4>
-        <TitleH2 fontFamily="AloneInSpace">Cost</TitleH2>
-        <TitleH4 fontFamily="AloneInSpace">FREE + GAS FEE</TitleH4>
+        </TitleH5>
+        {address ? (
+          <>
+            <TitleH3 fontFamily="AloneInSpace">Mint Amount</TitleH3>
+            <TitleH5 fontFamily="AloneInSpace">1</TitleH5>
+            <TitleH3 fontFamily="AloneInSpace">Cost</TitleH3>
+            <TitleH5 fontFamily="AloneInSpace">FREE + GAS FEE</TitleH5>
+          </>
+        ) : (
+          ""
+        )}
       </WrapperContent>
       <WrapperMinting>
         <WrapperCanvas>

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import Nav from "src/ui/Nav";
 import CanvasStellar from "src/app/CanvasStellar";
-import { TitleH1, TitleH2, TitleH3, TitleH4 } from "src/ui/Typography";
+import { TitleH1, TitleH2, TitleH3, TitleH4, TitleH5 } from "src/ui/Typography";
 import Button from "src/ui/Button";
 import { Anchor } from "src/ui/Anchor";
 
@@ -16,17 +16,15 @@ const Hero = () => {
       </WrapperCanvas>
       <WrapperContent>
         <TitleH1 fontFamily="AloneInSpace" fontSize="3rem">
-          NITAD
-          <span>18</span>
-          NFT Workshop
+          NITAD18 NFT Workshop
         </TitleH1>
         <div>
-          <TitleH4 fontFamily="AloneInSpace">
-            Pichaya Puttekulangkura (Micky)
-          </TitleH4>
-          <TitleH4 fontFamily="AloneInSpace">
-            Dhibadhi Sriuranpong (Atom)
-          </TitleH4>
+          <TitleH5 fontFamily="AloneInSpace">
+            Pichaya Puttekulangkura (Micky) - ICE Senior
+          </TitleH5>
+          <TitleH5 fontFamily="AloneInSpace">
+            Dhibadhi Sriuranpong (Atom) - ADME Senior
+          </TitleH5>
         </div>
         <a href="#mint">
           <Button>Start</Button>
