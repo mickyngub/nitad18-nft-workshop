@@ -4,10 +4,11 @@ import { TitleH3 } from "../Typography";
 
 interface Props {
   glow?: boolean;
+  onClick?: () => void;
 }
-const Button: React.FC<Props> = ({ children, glow }) => {
+const Button: React.FC<Props> = ({ children, glow, onClick }) => {
   return (
-    <StyledButton glow={glow}>
+    <StyledButton glow={glow} onClick={onClick}>
       <TitleH3>{children}</TitleH3>
     </StyledButton>
   );
