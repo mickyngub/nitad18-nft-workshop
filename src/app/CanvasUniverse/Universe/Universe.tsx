@@ -25,7 +25,7 @@ const Universe = () => {
     node.material.wireframe = true;
   });
 
-  return <primitive object={scene} scale={0.04}></primitive>;
+  return <primitive object={scene} scale={0.05}></primitive>;
 };
 
 useGLTF.preload("/universe.gltf");

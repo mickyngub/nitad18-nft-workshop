@@ -9,6 +9,7 @@ const CanvasUniverse = () => {
     <Canvas>
       <Suspense fallback={null}>
         <ambientLight intensity={1} color={`#32C1CC`} />
+        <pointLight color="#32C1CC" intensity={10} position={[0, 0, 0]} />
         {/* <Box position={[-1.2, 0, 0]} /> */}
         {/* <Box position={[1.2, 0, 0]} /> */}
         <OrbitControls autoRotate enableZoom={false} />
