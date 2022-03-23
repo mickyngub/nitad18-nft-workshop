@@ -1,10 +1,14 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { TitleH3 } from "../Typography";
-const Button = () => {
+
+interface Props {
+  glow?: boolean;
+}
+const Button: React.FC<Props> = ({ children, glow }) => {
   return (
-    <StyledButton>
-      <TitleH3>Start</TitleH3>
+    <StyledButton glow={glow}>
+      <TitleH3>{children}</TitleH3>
     </StyledButton>
   );
 };
@@ -22,7 +26,7 @@ const ring = keyframes`
   }
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<Props>`
   min-width: 300px;
   min-height: 60px;
   font-size: 0.75rem;
@@ -79,6 +83,17 @@ const StyledButton = styled.button`
     transform: translate(-50%, -50%);
     animation: ${ring} 1.5s infinite;
   }
+
+  ${(props: Props) => {
+    if (props.glow === false) {
+      return `
+            &::after{
+                display: none
+            }
+          `;
+    }
+  }}
+
   &:hover::after,
   &:focus::after {
     animation: none;

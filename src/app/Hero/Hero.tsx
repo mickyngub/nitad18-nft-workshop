@@ -27,7 +27,7 @@ const Hero = () => {
             Dhibadhi Sriuranpong (Atom)
           </TitleH4>
         </div>
-        <Button />
+        <Button>Start</Button>
       </WrapperContent>
     </WrapperHero>
   );
