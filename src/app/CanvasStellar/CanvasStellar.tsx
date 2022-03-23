@@ -9,7 +9,7 @@ const CanvasStellar = () => {
     <Canvas>
       <Suspense fallback={null}>
         <Stellar />
-        <Stars radius={75} count={2500} fade />
+        <Stars radius={60} count={4000} fade />
         <OrbitControls
           autoRotate
           autoRotateSpeed={0.25}

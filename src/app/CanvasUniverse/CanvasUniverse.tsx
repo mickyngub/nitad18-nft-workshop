@@ -8,10 +8,10 @@ const CanvasUniverse = () => {
   return (
     <Canvas>
       <Suspense fallback={null}>
-        {/* <ambientLight intensity={10} color="white" /> */}
+        <ambientLight intensity={1} color={`#32C1CC`} />
         {/* <Box position={[-1.2, 0, 0]} /> */}
         {/* <Box position={[1.2, 0, 0]} /> */}
-        <OrbitControls enableZoom={false} />
+        <OrbitControls autoRotate enableZoom={false} />
         <Universe />
       </Suspense>
     </Canvas>

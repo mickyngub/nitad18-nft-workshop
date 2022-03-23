@@ -3,11 +3,13 @@ import { nitad18Background } from "src/assets";
 import CanvasUniverse from "./CanvasUniverse";
 import Footer from "src/ui/Footer";
 import Hero from "./Hero";
+import Mint from "./Mint";
 
 const App = () => {
   return (
     <WrapperApp>
       <Hero />
+      <Mint />
       <Footer />
     </WrapperApp>
   );
