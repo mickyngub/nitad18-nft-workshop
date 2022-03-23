@@ -95,6 +95,31 @@ a {
 
 
 }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.5rem; /* width of the entire scrollbar */
+    /* padding: 1rem 1rem; */
+    /* margin: 1rem 1rem; */
+
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-purple); /* color of the tracking area */
+
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+    to right,
+    hsl(235deg 31% 33%),
+    hsl(237deg 33% 21%)
+  );
+  border-radius: 2rem;
+  }
 `;
 
 export default globalStyles;
