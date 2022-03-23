@@ -56,5 +56,6 @@ const WrapperContent = styled.div`
   justify-content: center;
   gap: 6rem;
   padding: 6rem 4rem;
+  width: 70%;
 `;
 export default Hero;

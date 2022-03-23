@@ -13,6 +13,7 @@ const CanvasStellar = () => {
         <OrbitControls
           autoRotate
           autoRotateSpeed={0.25}
+          rotateSpeed={0.25}
           minDistance={2}
           maxDistance={6}
         />
