@@ -3,20 +3,12 @@ import styled, { keyframes } from "styled-components";
 import { TitleH3 } from "../Typography";
 const Button = () => {
   return (
-    <WrapperButton>
-      <StyledButton>
-        <TitleH3>Start</TitleH3>
-      </StyledButton>
-    </WrapperButton>
+    <StyledButton>
+      <TitleH3>Start</TitleH3>
+    </StyledButton>
   );
 };
 
-const WrapperButton = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 const ring = keyframes`
     0% {
     width: 60px;
