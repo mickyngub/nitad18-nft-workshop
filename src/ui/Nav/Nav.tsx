@@ -59,12 +59,14 @@ const WrapperNav = styled.nav`
     hsl(235deg 31% 33%),
     hsl(237deg 33% 21%)
   );
-  height: 2rem;
+  height: 3rem;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 9fr;
   align-items: center;
   padding: 0 2rem;
+  position: relative;
+  z-index: 2;
 `;
 const WrapperLogo = styled.div``;
 const WrapperLinks = styled.div`

@@ -15,7 +15,7 @@ export default function Model({ ...props }) {
   const { nodes, materials } = useGLTF("/stellar.gltf");
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[2, 1, 0]} rotation={[0, 1, 0]} scale={0.12}>
+      <group position={[3, 1, 0]} rotation={[0, 1, 0]} scale={0.12}>
         <mesh
           geometry={nodes.Object_3.geometry}
           material={materials.material_13}
