@@ -19,7 +19,6 @@ const WrapperApp = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* height: 100%; */
 `;
 
 export default App;

@@ -8,3 +8,4 @@ export { default as instagramLogo } from "./instagram-logo.png";
 export { default as facebookLogo } from "./facebook-logo.png";
 export { default as footerOverlayInner } from "./footer-overlay-inner.png";
 export { default as footerOverlayOuter } from "./footer-overlay-outer.png";
+export { default as polygonLogo } from "./polygon-logo.png";
