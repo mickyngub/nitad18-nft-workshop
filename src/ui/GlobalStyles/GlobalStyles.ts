@@ -7,12 +7,12 @@ import AloneInSpace from "src/fonts/alone-in-space.ttf";
 const globalStyles = createGlobalStyle`
 
 @font-face {
-  font-family: "FC Minimal";
+  font-family: "FCMinimal";
   src: url(${FCMinimal}) format('truetype');
 }
 
 @font-face {
-  font-family: "Alone in Space";
+  font-family: "AloneInSpace";
   src: url(${AloneInSpace}) format('truetype');
 }
 /*
@@ -32,7 +32,7 @@ const globalStyles = createGlobalStyle`
 */
 html, body, #root {
   height: 100%;
-  font-family: "FC Minimal";
+  font-family: "FCMinimal";
 }
 /*
   Typographic tweaks!
