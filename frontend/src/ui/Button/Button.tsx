@@ -5,10 +5,11 @@ import { TitleH3 } from "../Typography";
 interface Props {
   glow?: boolean;
   onClick?: () => void;
+  disabled?: boolean;
 }
-const Button: React.FC<Props> = ({ children, glow, onClick }) => {
+const Button: React.FC<Props> = ({ children, glow, onClick, disabled }) => {
   return (
-    <StyledButton glow={glow} onClick={onClick}>
+    <StyledButton glow={glow} onClick={onClick} disabled={disabled}>
       <TitleH3>{children}</TitleH3>
     </StyledButton>
   );
@@ -95,6 +96,22 @@ const StyledButton = styled.button<Props>`
     }
   }}
 
+  ${(props: Props) => {
+    if (props.disabled === true) {
+      return `
+        cursor: not-allowed;
+        background: var(--color-gray);
+        box-shadow: 0 0 30px var(--color-black-smoky);
+        &::before {
+          display: none;
+        }
+        &::after {
+          display: none;
+        }
+
+      `;
+    }
+  }}
   &:hover::after,
   &:focus::after {
     animation: none;
