@@ -8,8 +8,8 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 // @notice just a push payment splitter. not the best practice. use it on trusted address only
 contract PushPaymentSplitter is Ownable, ReentrancyGuard {
-    address[] recipients;
-
+    address[] public recipients;
+    
     // @notice init with a list of recipients
     constructor(address[] memory _recipients) {
         for (uint256 i = 0; i < _recipients.length; i++) {
