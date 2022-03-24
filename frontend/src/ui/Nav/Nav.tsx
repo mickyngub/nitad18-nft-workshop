@@ -1,37 +1,37 @@
 import React from "react";
-import { nitad18Logo } from "src/assets";
+import { nitad18Logo, nitad18LogoBig } from "src/assets";
 import styled from "styled-components/macro";
 import { Anchor } from "../Anchor";
 import { TitleH4 } from "../Typography";
 
 const navLinks = [
   {
-    name: "Digital museum",
+    name: "",
     link: "https://nitad18.com/digitalmuseum",
   },
 
   {
-    name: "Nitalk",
+    name: "",
     link: "https://nitad18.com/nitalk",
   },
 
   {
-    name: "Hackatron",
+    name: "",
     link: "https://nitad18.com/hackatron",
   },
 
   {
-    name: "Innofunding & Innocrowding",
+    name: "",
     link: "https://nitad18.com/inno",
   },
 
   {
-    name: "Bootcamp",
+    name: "",
     link: "https://nitad18.com/bootcamp",
   },
 
   {
-    name: "Podcast",
+    name: "",
     link: "https://nitad18.com/podcast",
   },
 ];
@@ -40,7 +40,7 @@ const Nav = () => {
   return (
     <WrapperNav id="nav">
       <WrapperLogo>
-        <Image src={nitad18Logo} alt="Nitad18 Logo" />
+        <Image src={nitad18LogoBig} alt="Nitad18 Logo" />
       </WrapperLogo>
       <WrapperLinks>
         {navLinks.map((navLink) => {
@@ -56,17 +56,15 @@ const Nav = () => {
 };
 
 const WrapperNav = styled.nav`
-  background: linear-gradient(
-    to right,
-    hsl(235deg 31% 33%),
-    hsl(237deg 33% 21%)
-  );
+  background: transparent;
   height: 3rem;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 9fr;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 4rem;
+  padding-top: 3.5rem;
+  margin-bottom: 0.5rem;
   position: relative;
   z-index: 2;
 `;
@@ -77,5 +75,7 @@ const WrapperLinks = styled.div`
 `;
 const Image = styled.img`
   display: block;
+  width: 50px;
+  height: 30px;
 `;
 export default Nav;
