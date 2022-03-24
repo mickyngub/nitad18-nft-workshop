@@ -5,15 +5,14 @@ const main = async () => {
   const PushPaymentSplitter = await hre.ethers.getContractFactory(
     "PushPaymentSplitter"
   );
-  const pushPaymentSplitter = await PushPaymentSplitter.connect(addr0).deploy([
-    addr1.address,
-    addr2.address,
-    addr3.address,
-  ]);
+  const pushPaymentSplitter = await PushPaymentSplitter.deploy();
 
   await pushPaymentSplitter.deployed();
 
-  console.log("PushPaymentSplitter deployed to:", pushPaymentSplitter.address);
+  //   console.log("PushPaymentSplitter deployed to:", pushPaymentSplitter.address);
+  //   let arrayRecipients = await pushPaymentSplitter.recipients(2);
+
+  console.log("PushPaymentSplitter address", pushPaymentSplitter.address);
 };
 
 main()

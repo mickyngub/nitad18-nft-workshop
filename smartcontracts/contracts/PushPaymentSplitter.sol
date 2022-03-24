@@ -11,12 +11,6 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 contract PushPaymentSplitter is Ownable, ReentrancyGuard {
     address[] public recipients;
 
-    // @notice init with a list of recipients
-    constructor(address[] memory _recipients) {
-        for (uint256 i = 0; i < _recipients.length; i++) {
-            recipients.push(_recipients[i]);
-        }
-    }
     receive() external payable {}
     fallback() external payable {}
     // @notice add new recipient

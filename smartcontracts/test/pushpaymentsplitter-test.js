@@ -1,32 +1,15 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("PPS constructor", function () {
-  it("Should have correct recipients from constructor array", async function () {
-    const [addr0, addr1, addr2, addr3] = await ethers.getSigners();
-    const PushPaymentSplitter = await hre.ethers.getContractFactory(
-      "PushPaymentSplitter"
-    );
-    const pushPaymentSplitter = await PushPaymentSplitter.connect(addr0).deploy(
-      [addr1.address, addr2.address, addr3.address]
-    );
-    await pushPaymentSplitter.deployed();
-
-    expect(await pushPaymentSplitter.recipients(0)).to.equal(addr1.address);
-    expect(await pushPaymentSplitter.recipients(1)).to.equal(addr2.address);
-    expect(await pushPaymentSplitter.recipients(2)).to.equal(addr3.address);
-  });
-});
-
 describe("PPS addTargets", function () {
   it("Should add recipients", async function () {
     const [addr0, addr1, addr2, addr3] = await ethers.getSigners();
     const PushPaymentSplitter = await hre.ethers.getContractFactory(
       "PushPaymentSplitter"
     );
-    const pushPaymentSplitter = await PushPaymentSplitter.connect(addr0).deploy(
-      []
-    );
+    const pushPaymentSplitter = await PushPaymentSplitter.connect(
+      addr0
+    ).deploy();
     await pushPaymentSplitter.deployed();
 
     await pushPaymentSplitter
@@ -45,9 +28,13 @@ describe("PPS receive", function () {
     const PushPaymentSplitter = await hre.ethers.getContractFactory(
       "PushPaymentSplitter"
     );
-    const pushPaymentSplitter = await PushPaymentSplitter.connect(addr0).deploy(
-      [addr1.address, addr2.address, addr3.address]
-    );
+    const pushPaymentSplitter = await PushPaymentSplitter.connect(
+      addr0
+    ).deploy();
+    await pushPaymentSplitter
+      .connect(addr0)
+      .addTargets([addr1.address, addr2.address, addr3.address]);
+
     await pushPaymentSplitter.deployed();
     await addr0.sendTransaction({
       to: pushPaymentSplitter.address,
@@ -68,9 +55,9 @@ describe("PPS Split", function () {
     const PushPaymentSplitter = await hre.ethers.getContractFactory(
       "PushPaymentSplitter"
     );
-    const pushPaymentSplitter = await PushPaymentSplitter.connect(addr0).deploy(
-      []
-    );
+    const pushPaymentSplitter = await PushPaymentSplitter.connect(
+      addr0
+    ).deploy();
     await pushPaymentSplitter.deployed();
 
     await pushPaymentSplitter
