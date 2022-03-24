@@ -15,20 +15,33 @@ const Hero = () => {
         {/* <CanvasUniverse /> */}
       </WrapperCanvas>
       <WrapperContent>
-        <TitleH1 fontFamily="AloneInSpace" fontSize="3rem">
-          NITAD18 NFT Workshop
-        </TitleH1>
         <div>
+          <TitleH1 fontFamily="AloneInSpace" fontSize="2.5rem">
+            NITAD18 NFT Workshop &emsp;
+          </TitleH1>
+          <div style={{ marginTop: "2rem" }}>
+            <TitleH2 fontFamily="AloneInSpace" fontSize="2.75rem" color="black">
+              "Into the Metaverse"
+            </TitleH2>
+          </div>
+        </div>
+        <TitleH2 fontFamily="AloneInSpace" fontSize="3rem"></TitleH2>
+        <div>
+          <div style={{ marginBottom: "1rem" }}>
+            <TitleH4 fontFamily="AloneInSpace">Presented by</TitleH4>
+          </div>
           <TitleH5 fontFamily="AloneInSpace">
             Pichaya Puttekulangkura (Micky) - ICE Senior
           </TitleH5>
           <TitleH5 fontFamily="AloneInSpace">
-            Dhibadhi Sriuranpong (Atom) - ADME Senior
+            Dhibadi Sriuranpong (Atom) - ADME Senior
           </TitleH5>
         </div>
-        <a href="#mint">
-          <Button>Start</Button>
-        </a>
+        <ButtonDiv>
+          <a href="#mint">
+            <Button>Start</Button>
+          </a>
+        </ButtonDiv>
       </WrapperContent>
     </WrapperHero>
   );
@@ -52,8 +65,11 @@ const WrapperContent = styled.div`
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  gap: 6rem;
-  padding: 6rem 4rem;
+  gap: 1rem;
+  padding: 3rem 4rem;
   width: 70%;
+`;
+const ButtonDiv = styled.div`
+  margin-top: 2rem;
 `;
 export default Hero;
