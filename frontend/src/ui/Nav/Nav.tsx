@@ -63,7 +63,7 @@ const WrapperNav = styled.nav`
   grid-template-columns: 1fr 9fr;
   align-items: center;
   padding: 0 4rem;
-  padding-top: 3.5rem;
+  padding-top: 3.25rem;
   margin-bottom: 0.5rem;
   position: relative;
   z-index: 2;
