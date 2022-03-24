@@ -16,14 +16,14 @@ contract PushPaymentSplitter is Ownable, ReentrancyGuard {
             recipients.push(_recipients[i]);
         }
     }
-
+    fallback() external payable {}
     // @notice add new recipient
     function addTarget(address recipient) public onlyOwner {
         recipients.push(recipient);
     }
 
-    // @notice push balance to all recipients. (payable)
-    function push() public payable nonReentrant {
+    // @notice push balance to all recipients.
+    function push() public onlyOwner nonReentrant {
         uint256 amount = address(this).balance / recipients.length;
         for (uint256 i = 0; i < recipients.length; i++) {
             payable(recipients[i]).transfer(amount);
