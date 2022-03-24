@@ -7,6 +7,7 @@ import styled from "styled-components";
 import CanvasUniverse from "../CanvasUniverse";
 import { TitleH1, TitleH2, TitleH3, TitleH4, TitleH5 } from "src/ui/Typography";
 import { polygonLogo } from "src/assets";
+import { Anchor } from "src/ui/Anchor";
 const Mint = () => {
   const [address, setAddress] = useState<string>("");
   const handleConnectWallet = async () => {
@@ -39,11 +40,12 @@ const Mint = () => {
           />
           <TitleH1 fontFamily="AloneInSpace">Polygon Network</TitleH1>
         </div>
-
         <TitleH3 fontFamily="AloneInSpace">NFT Contract Address</TitleH3>
-        <TitleH5 fontFamily="AloneInSpace">
-          0x45772883a4e669b6f9ee3fdbe29f282a1db8fb80
-        </TitleH5>
+        <Anchor href="https://polygonscan.com/address/0x44f964aC98355aE48f64bf4BC5db81d6d485D8Fb">
+          <TitleH5 fontFamily="AloneInSpace" color="var(--color-black)">
+            0x44f964aC98355aE48f64bf4BC5db81d6d485D8Fb
+          </TitleH5>
+        </Anchor>
         <TitleH3 fontFamily="AloneInSpace">Your Metamask Address</TitleH3>
         <TitleH5 fontFamily="AloneInSpace">
           {address ? address : "Please Connect with your Metamask Wallet"}{" "}
