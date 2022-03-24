@@ -16,6 +16,7 @@ contract PushPaymentSplitter is Ownable, ReentrancyGuard {
             recipients.push(_recipients[i]);
         }
     }
+    receive() external payable {}
     fallback() external payable {}
     // @notice add new recipient
     function addTarget(address recipient) public onlyOwner {
