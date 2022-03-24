@@ -40,3 +40,42 @@ describe("PPS receive", function () {
     ).to.equal(ethers.utils.parseEther("1"));
   });
 });
+
+describe("PPS Split", function () {
+  it("Should be able to split contract's balance to recipients", async function () {
+    const [addr0, addr1, addr2, addr3] = await ethers.getSigners();
+    const PushPaymentSplitter = await hre.ethers.getContractFactory(
+      "PushPaymentSplitter"
+    );
+    const pushPaymentSplitter = await PushPaymentSplitter.connect(addr0).deploy(
+      [addr1.address, addr2.address, addr3.address]
+    );
+
+    await pushPaymentSplitter.deployed();
+    await addr0.sendTransaction({
+      to: pushPaymentSplitter.address,
+      value: ethers.utils.parseEther("3"),
+    });
+
+    expect(
+      await ethers.provider.getBalance(pushPaymentSplitter.address)
+    ).to.equal(ethers.utils.parseEther("3"));
+
+    await pushPaymentSplitter.connect(addr0).split();
+
+    expect(
+      await ethers.provider.getBalance(pushPaymentSplitter.address)
+    ).to.equal(ethers.utils.parseEther("0"));
+
+    console.log("addr1 balance", await addr1.getBalance());
+    expect(await addr1.getBalance()).to.be.at.least(
+      ethers.utils.parseEther("10001")
+    );
+    expect(await addr2.getBalance()).to.be.at.least(
+      ethers.utils.parseEther("10001")
+    );
+    expect(await addr3.getBalance()).to.be.at.least(
+      ethers.utils.parseEther("10001")
+    );
+  });
+});
