@@ -2,12 +2,11 @@
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "erc721a/contracts/ERC721A.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract Nitad18NFT is ERC721A {
+contract Nitad18NFT is ERC721Enumerable {
     using Strings for uint256;
     uint256 public constant MAX_SUPPLY = 200;
-    uint256 public constant MAX_MINT_PER_TX = 1;
     address public immutable owner;
     Stage public stage;
     string public baseURI;
@@ -25,7 +24,7 @@ contract Nitad18NFT is ERC721A {
 
     event StageChanged(Stage from, Stage to);
 
-    constructor() ERC721A("Nitad18","NT18") {
+    constructor() ERC721("Nitad18","NT18") {
         owner = _msgSender();
     }
 
@@ -52,18 +51,15 @@ contract Nitad18NFT is ERC721A {
         baseURI = _newBaseURI;
     }
 
-    function mint(uint256 _quantity, address _account) external payable  {
-        _beforeMint(_quantity);
-        _safeMint(_account, _quantity);
+    function mint() external {
+        _beforeMint();
+        _safeMint(msg.sender, 1);
     }
 
-
-    function _beforeMint(uint256 _quantity) internal view {
+    function _beforeMint() internal view {
         uint256 currentSupply = totalSupply();
-        require(currentSupply + _quantity <= MAX_SUPPLY, "Nitad18NFT: exceed max supply.");
-        if (stage == Stage.Public) {
-            require(_quantity <= MAX_MINT_PER_TX, "Nitad18NFT: too many mint.");
-        } else {
+        require(currentSupply + 1 <= MAX_SUPPLY, "Nitad18NFT: exceed max supply.");
+        if (stage == Stage.Pause) {
             revert("Nitad18NFT: mint is pause.");
         }
     }
