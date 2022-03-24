@@ -18,6 +18,27 @@ describe("PPS constructor", function () {
   });
 });
 
+describe("PPS addTargets", function () {
+  it("Should add recipients", async function () {
+    const [addr0, addr1, addr2, addr3] = await ethers.getSigners();
+    const PushPaymentSplitter = await hre.ethers.getContractFactory(
+      "PushPaymentSplitter"
+    );
+    const pushPaymentSplitter = await PushPaymentSplitter.connect(addr0).deploy(
+      []
+    );
+    await pushPaymentSplitter.deployed();
+
+    await pushPaymentSplitter
+      .connect(addr0)
+      .addTargets([addr1.address, addr2.address, addr3.address]);
+
+    expect(await pushPaymentSplitter.recipients(0)).to.equal(addr1.address);
+    expect(await pushPaymentSplitter.recipients(1)).to.equal(addr2.address);
+    expect(await pushPaymentSplitter.recipients(2)).to.equal(addr3.address);
+  });
+});
+
 describe("PPS receive", function () {
   it("Should be able to receive sent matic", async function () {
     const [addr0, addr1, addr2, addr3] = await ethers.getSigners();
@@ -48,10 +69,14 @@ describe("PPS Split", function () {
       "PushPaymentSplitter"
     );
     const pushPaymentSplitter = await PushPaymentSplitter.connect(addr0).deploy(
-      [addr1.address, addr2.address, addr3.address]
+      []
     );
-
     await pushPaymentSplitter.deployed();
+
+    await pushPaymentSplitter
+      .connect(addr0)
+      .addTargets([addr1.address, addr2.address, addr3.address]);
+
     await addr0.sendTransaction({
       to: pushPaymentSplitter.address,
       value: ethers.utils.parseEther("3"),
