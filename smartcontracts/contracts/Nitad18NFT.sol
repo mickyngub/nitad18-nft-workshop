@@ -40,6 +40,10 @@ contract Nitad18NFT is ERC721Enumerable {
             );
     }
 
+    function _baseURI() internal view virtual override returns (string memory) {
+        return baseURI;
+    }
+    
     function setStage(Stage _stage) external onlyOwner {
         require(stage != _stage , "Nitad18NFT: invalid stage.");
         Stage prevStage = stage;
