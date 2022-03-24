@@ -51,17 +51,15 @@ contract Nitad18NFT is ERC721Enumerable {
         baseURI = _newBaseURI;
     }
 
-    function mint() external {
-        _beforeMint();
-        _safeMint(msg.sender, 1);
-    }
-
-    function _beforeMint() internal view {
+    function mint() external { 
         uint256 currentSupply = totalSupply();
         require(currentSupply + 1 <= MAX_SUPPLY, "Nitad18NFT: exceed max supply.");
         if (stage == Stage.Pause) {
             revert("Nitad18NFT: mint is pause.");
         }
+        _safeMint(msg.sender, currentSupply);
     }
+
+
 
 }
