@@ -8,20 +8,52 @@ import CanvasUniverse from "../CanvasUniverse";
 import { TitleH1, TitleH2, TitleH3, TitleH4, TitleH5 } from "src/ui/Typography";
 import { polygonLogo } from "src/assets";
 import { Anchor } from "src/ui/Anchor";
+import useContract from "src/hooks/useContract";
 const Mint = () => {
   const [address, setAddress] = useState<string>("");
+  const [signer, setSigner] = useState<ethers.providers.JsonRpcSigner>();
+  const [mining, setMining] = useState<boolean>(false);
+  const { NFT_CONTRACT, NFT_INTERFACE, NFT_ADDRESS } = useContract();
+
   const handleConnectWallet = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     await provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
     let signerAddress = await signer.getAddress();
     setAddress(signerAddress);
+    setSigner(signer);
     notifyWalletConnected();
   };
+
+  const handleMint = async () => {
+    // console.log("clicked mint");
+    // console.log(signer);
+    if (signer) {
+      try {
+        let txnHash = await NFT_CONTRACT.connect(signer).mint();
+        setMining(true);
+        // console.log("txnHash", txnHash);
+        let txnReceipt = await txnHash.wait();
+        // console.log("confirmation", txnReceipt.confirmations);
+        if (txnReceipt.confirmations == 1) notifyMintSuccess();
+        setMining(false);
+      } catch (e) {
+        console.log(e);
+        notifyMintFail();
+        setMining(false);
+      }
+    }
+  };
+
   const notifyWalletConnected = () => {
     toast("Wallet Connected");
   };
-
+  const notifyMintSuccess = () => {
+    toast("Mint Success");
+  };
+  const notifyMintFail = () => {
+    toast("Mint Failed");
+  };
   return (
     <WrapperMint id="mint">
       <WrapperContent>
@@ -41,9 +73,9 @@ const Mint = () => {
           <TitleH1 fontFamily="AloneInSpace">Polygon Network</TitleH1>
         </div>
         <TitleH3 fontFamily="AloneInSpace">NFT Contract Address</TitleH3>
-        <Anchor href="https://polygonscan.com/address/0x44f964aC98355aE48f64bf4BC5db81d6d485D8Fb">
+        <Anchor href={`https://polygonscan.com/address/${NFT_ADDRESS}`}>
           <TitleH5 fontFamily="AloneInSpace" color="var(--color-black)">
-            0x44f964aC98355aE48f64bf4BC5db81d6d485D8Fb
+            {NFT_ADDRESS}
           </TitleH5>
         </Anchor>
         <TitleH3 fontFamily="AloneInSpace">Your Metamask Address</TitleH3>
@@ -68,7 +100,9 @@ const Mint = () => {
         {!address ? (
           <Button onClick={handleConnectWallet}>Connect Wallet</Button>
         ) : (
-          <Button>Mint</Button>
+          <Button onClick={handleMint} disabled={mining}>
+            Mint
+          </Button>
         )}
       </WrapperMinting>
       <ToastContainer />
