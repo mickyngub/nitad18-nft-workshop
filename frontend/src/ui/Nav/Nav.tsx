@@ -45,7 +45,7 @@ const Nav = () => {
       <WrapperLinks>
         {navLinks.map((navLink) => {
           return (
-            <Anchor href={navLink.link}>
+            <Anchor href={navLink.link} key={navLink.link}>
               <TitleH4>{navLink.name}</TitleH4>
             </Anchor>
           );
