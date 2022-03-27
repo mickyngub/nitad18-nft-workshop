@@ -1,15 +1,5 @@
-# Basic Sample Hardhat Project
+# Smart Contracts
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Smart contracts are written in Solidity with Hardhat as a development environment. Nitad18NFT contract utilized ERC721Enumerable for its functionality and is deployed on Polygon Mainnet at https://polygonscan.com/address/0xc0b19635cfEb6772e8cF237c398D00567e16b9Bf The PushPaymentSpliiter contract was used to airdrop necessary amount of gas fees for workshop participants, deployed on Polygon Mainnet at https://polygonscan.com/address/0xB2412D9eCc65D5919B681Bca3f25Fb1B2fE5a391
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+The NFT collection can be seen on Opensea at https://opensea.io/collection/nitad18-nft
