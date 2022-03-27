@@ -1,5 +1,7 @@
 # NITAD18 NFT Workshop
 
+https://user-images.githubusercontent.com/57980116/160275298-7ed35b78-775b-4369-b1c2-c315db8577b0.mp4
+
 ## Summary
 
 Metaverse, biggest trends of 2021/2022 and possibly this decade. Even though, the world is continually evolving in every aspect, it is undeniable that Metaverse is the center of attention.
