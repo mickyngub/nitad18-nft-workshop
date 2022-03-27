@@ -14,4 +14,8 @@ For the activity workshop, instead of giving out a typical POAP, our aim is to a
 
 ## Development
 
-This repository contains two main parts, the frontend directory and the smart contract directory. Frontend is written using React Typescript with styled components as the sole styling tool and React Three Fiber for 3d models. The smart contracts are written using solidity and were deployed to the Polygon Mainnet.
+This repository contains two main parts, the frontend directory and the smart contract directory.
+
+Frontend is written using React Typescript with styled components as the sole styling tool and React Three Fiber for 3d models. The website is deployed using Vercel at https://nitad18-nft-workshop.vercel.app/ (Optimized for MacBook Pro 14-inch, 2021)
+
+The smart contracts are written using solidity and were deployed to the Polygon Mainnet. The NFT collection can be seen on Opensea at https://opensea.io/collection/nitad18-nft
