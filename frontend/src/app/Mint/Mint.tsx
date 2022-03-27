@@ -100,8 +100,8 @@ const Mint = () => {
         {!address ? (
           <Button onClick={handleConnectWallet}>Connect Wallet</Button>
         ) : (
-          <Button onClick={handleMint} disabled={mining}>
-            Mint
+          <Button onClick={handleMint} disabled={true}>
+            SOLD OUT
           </Button>
         )}
       </WrapperMinting>
