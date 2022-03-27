@@ -142,6 +142,8 @@ const WrapperMinting = styled.div`
   gap: 5rem;
   align-items: center;
   justify-content: start;
+  position: relative;
+  z-index: 4;
 `;
 const MintingDiv = styled.div`
   /* width: 40%; */
