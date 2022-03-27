@@ -78,6 +78,12 @@ const Mint = () => {
             {NFT_ADDRESS}
           </TitleH5>
         </Anchor>
+        <TitleH3 fontFamily="AloneInSpace">Opensea Collection</TitleH3>
+        <Anchor href="https://opensea.io/collection/nitad18-nft">
+          <TitleH5 fontFamily="AloneInSpace" color="var(--color-black)">
+            opensea.io/collection/nitad18-nft
+          </TitleH5>
+        </Anchor>
         <TitleH3 fontFamily="AloneInSpace">Your Metamask Address</TitleH3>
         <TitleH5 fontFamily="AloneInSpace">
           {address ? address : "Please Connect with your Metamask Wallet"}{" "}
