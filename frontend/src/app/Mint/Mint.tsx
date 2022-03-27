@@ -62,7 +62,7 @@ const Mint = () => {
             display: "flex",
             alignItems: "center",
             gap: "2rem",
-            marginBottom: "3rem",
+            marginBottom: "1.5rem",
           }}
         >
           <img
@@ -118,7 +118,7 @@ const Mint = () => {
 const WrapperMint = styled.div`
   height: 100vh;
   margin-bottom: 15rem;
-  padding: 6rem 4rem;
+  padding: 4rem 4rem 6rem;
   display: flex;
   /* color: white; */
 `;
